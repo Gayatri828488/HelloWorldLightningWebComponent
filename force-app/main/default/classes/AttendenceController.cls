@@ -15,9 +15,9 @@ public without sharing class AttendenceController {
     public static Map<String, DateTime> getAttendanceTimes() {
         Map<String, DateTime> attendanceTimes = new Map<String, DateTime>();
 
-        String loggedInUserName = UserInfo.getName();
-        Employee__c employee = [SELECT Id, Name__c FROM Employee__c WHERE Name__c = :loggedInUserName LIMIT 1];
-
+        String loggedInUserId = UserInfo.getuserId();
+       
+ Employee__c employee = [SELECT Id, Name__c FROM Employee__c WHERE User__c = :loggedInUserId LIMIT 1];
         if (employee == null) {
             System.debug('Employee not found for the current user.');
             return null; 
@@ -54,9 +54,9 @@ public without sharing class AttendenceController {
     @AuraEnabled 
 
     public static DateTime createOrUpdateAttendance(Boolean isPunchOut,Boolean isWfh) {
-        String loggedInUserName = UserInfo.getName();
-        Employee__c employee = [SELECT Id, Name__c FROM Employee__c WHERE Name__c = :loggedInUserName LIMIT 1];
-    
+        String loggedInUserId = UserInfo.getuserId();
+       
+        Employee__c employee = [SELECT Id, Name__c FROM Employee__c WHERE User__c = :loggedInUserId LIMIT 1];
         if (employee == null) {
             System.debug('Employee not found for the current user.');
             return null;
@@ -153,3 +153,5 @@ public without sharing class AttendenceController {
         return records.isEmpty() ? null : records[0];
     }
 }
+
+
