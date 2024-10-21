@@ -76,15 +76,30 @@ public without sharing class AttendenceController {
               Date  startDate = Date.today().toStartOfMonth();
               Date  endDate = Date.today().toStartOfMonth().addMonths(1).addDays(-1);
 
+              Integer weekendCount = 0;
+                for (Date currentDate = startDate; currentDate <= endDate; currentDate = currentDate.addDays(1)) {
+                    Integer dayOfWeek = currentDate.day();
+                     
+                    if (dayOfWeek == 1 || dayOfWeek == 7) { 
+                        weekendCount++;
+                    }
+                }
+
+
+              
               Integer holidaysCount = [SELECT COUNT() FROM Holiday_yearwise__c
                                              WHERE Date__c >= :startDate 
                                              AND Date__c <= :endDate 
-                                             AND (DAY_IN_WEEK(Date__c) != 7 
-                                             AND DAY_IN_WEEK(Date__c) != 6)];
+                                             AND (DAY_IN_WEEK(Date__c) != 1 
+                                             AND DAY_IN_WEEK(Date__c) != 7)];
+
+
                 monthlyAttendance = new Monthly_Attendance__c(Employee__c = employee.Id, Month__c = currentDTime.month(), Year__c = currentDTime.year(), 
                                                               Start_date__c = startDate, 
                                                               End_date__c =  endDate,
-                                                              Total_Holidays__c = holidaysCount );
+                                                              Total_Holidays__c = holidaysCount ,
+                                                              TotalWeekend__c  =  weekendCount*2
+                                                              );
                 insert monthlyAttendance;
             }
 
