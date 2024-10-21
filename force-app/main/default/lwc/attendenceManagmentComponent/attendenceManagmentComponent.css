@@ -1,0 +1,122 @@
+.mydiv {
+    padding: 20px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    background-color: #f4f8fc;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.mydiv:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.date-time-slot, .punch-in-out {
+    background-color: #ffffff;
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    /* align-items: flex-start; */
+    /* justify-content: space-between; */
+    border-radius: 12px;
+    margin: 10px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
+    width: 100%;
+    transition: box-shadow 0.2 ease-in-out;
+    margin: 30px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.date-time-slot:hover, .punch-in-out:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.date-time-slot p, .punch-in-out p {
+    margin: 8px 0;
+    color: #4a4a4a;
+    font-size: 16px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.date-time-slot p strong, .punch-in-out p strong {
+    color: #0070d2;
+    font-weight: 600;
+}
+
+.button-slot {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+    gap: 10px;
+}
+
+.Buttonclass {
+    text-align: center;
+}
+
+.lightning-button {
+    width: 100%;
+    max-width: 180px;
+    height: 44px;
+    font-size: 15px;
+    background-color: #0070d2;
+    color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.lightning-button:hover {
+    background-color: #005fb0;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+
+}
+
+@media screen and (max-width: 768px) {
+    .mydiv {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .container {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .date-time-slot, .punch-in-out {
+        width: 100%;
+        margin-bottom: 20px;
+        padding: 20px;
+   
+    }
+
+    .button-slot {
+        justify-content: center;
+        flex-direction: row;
+    }
+
+    .Buttonclass {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}

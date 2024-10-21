@@ -1,0 +1,36 @@
+<template>
+    <div class="mydiv">
+        <!-- <lightning-card title="Time Tracker" icon-name="utility:clock"> -->
+            <div class="container">
+                
+                <div class='date-time-slot'>
+                    <p><strong>Date:</strong> {currentDateTime}</p>
+                    <p><strong>Time:</strong> {currentDTimeDisplay}</p>
+                </div>
+
+               
+                <div class='punch-in-out'>
+                    <p><strong> Punch In:</strong> {punchInTimeDisplay}</p>
+                    <p><strong> Punch Out:</strong> {puchOutTimeDisplay}</p>
+                    <p><strong> Total Time:</strong> {totalTime}</p>
+                    
+                </div>
+
+                
+                <div class="button-slot">
+                    <div class="Buttonclass">
+                        <lightning-button label="Punch In" onclick={handlePunchIn} disabled={isPunchInDisabled}>  </lightning-button>
+                    </div>
+
+                    <div class="Buttonclass">
+                        <lightning-button label="Punch Out" onclick={handlePunchOut} disabled={isPunchOutDisabled}></lightning-button>
+                    </div>
+                    
+                    <div class="Buttonclass">
+                        <lightning-button label="Work from Home" onclick={handleWorkFromHome} disabled={isWorkFromHOmeDisabled} ></lightning-button>
+                    </div>
+                </div>
+            </div>
+        </lightning-card>
+    </div>
+</template>

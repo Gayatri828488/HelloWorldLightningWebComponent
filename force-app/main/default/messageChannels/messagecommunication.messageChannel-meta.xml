@@ -1,0 +1,15 @@
+<lightningmessagechannel xmlns="http://soap.sforce.com/2006/04/metadata">
+    <masterlabel> message comunication </masterlabel>
+    <isexposed>true</isexposed>
+    <description>This is a sample Lightning Message Channel.</description>
+     
+    <!-- Define message payload fields -->
+    <!-- <lightningmessagefields>
+        <fieldname>recordId</fieldname>
+        <description>This is the record Id that changed</description>
+    </lightningmessagefields>
+    <lightningmessagefields>
+        <fieldname>recordData</fieldname>
+        <description>The current data representing the record that changed</description>
+    </lightningmessagefields> -->
+</lightningmessagechannel>
