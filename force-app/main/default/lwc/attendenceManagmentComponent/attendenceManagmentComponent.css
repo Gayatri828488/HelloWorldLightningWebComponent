@@ -7,13 +7,6 @@
     width: 100%;
     background-color: #f4f8fc;
     border-radius: 12px;
-    /* box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); */
-    /* transition: transform 0.3s ease, box-shadow 0.3s ease; */
-}
-
-.mydiv:hover {
-    transform: scale(1.02);
-    /* box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); */
 }
 
 .container {
@@ -26,48 +19,39 @@
 
 .date-time-slot, .punch-in-out {
     background-color: #ffffff;
-    padding: 30px;
+    padding: 20px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: space-between;
     border-radius: 12px;
-    margin: 30px ;
-    text-wrap: nowrap;
-    justify-content: space-between;
-
-    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12); */
+    margin: 20px 10px;
     width: 60%;
-    /* transition: box-shadow 0.3s ease; */
-    
 }
+
 .punch-in-out p {
-    margin-right: 40px; /* Space between each inline p element */
-    margin-bottom: 10px;
-    margin-left: 40px; /* Adds vertical space between lines */
-    display: inline-block; /* Keeps the elements in a row while applying margin */
+    margin-right: 40px; 
+    margin-left: 40px;
+    display: inline-block; 
 }
+
 .date-time-slot {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
 }
+
 .punch-in-out {
-    display: flex;
-    flex-direction: unset;
-    margin-left: 200px;
+    flex-direction: row;
+    margin-left: 0;
     width: 100%;
 }
- /* .date-time-slot:hover, .punch-in-out:hover {
-     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); 
-} */
 
 .date-time-slot p, .punch-in-out p {
     margin: 8px 0;
     color: #4a4a4a;
     font-size: 16px;
     font-weight: 500;
-    /* transition: color 0.3s ease; */
 }
 
 .date-time-slot p strong, .punch-in-out p strong {
@@ -78,20 +62,16 @@
 .button-slot {
     display: flex;
     flex-direction: row;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
     width: 100%;
     gap: 10px;
-    display: flex;
-    justify-content: center;
-    margin-top: 40px;
-    
+    margin-top: 20px;
 }
 
 .Buttonclass {
     text-align: center;
-    margin-bottom: 100px;
-    
+    margin-bottom: 20px;
 }
 
 .lightning-button {
@@ -102,22 +82,14 @@
     background-color: #0070d2;
     color: #ffffff;
     border-radius: 8px;
-    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); */
-    /* transition: background-color 0.3s ease, box-shadow 0.3s ease; */
 }
 
 .lightning-button:hover {
     background-color: #005fb0;
-    /* box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); */
 }
 
 @media screen and (max-width: 768px) {
-    .mydiv {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .container {
+    .mydiv, .container {
         flex-direction: column;
         align-items: center;
     }
@@ -128,8 +100,8 @@
     }
 
     .button-slot {
-        justify-content: center;
         flex-direction: column;
+        justify-content: center;
     }
 
     .Buttonclass {
